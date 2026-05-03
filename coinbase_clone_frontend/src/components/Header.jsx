@@ -3,9 +3,9 @@ import { FiGlobe } from 'react-icons/fi';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import logo from '../assets/logo.svg';
-import InstImage from '../assets/InstImage.png';
 import individualImg from '../assets/individual.png';
 import businessImg from '../assets/business.png';
+import InsImg from '../assets/InstImage.png';
 import developersImg from '../assets/developers.jpg';
 import companyImg from '../assets/company.png';
 import { FaBars, FaXmark, FaChevronRight } from 'react-icons/fa6';
@@ -35,11 +35,11 @@ import {
     IoHelpCircleOutline,
     IoNewspaperOutline,
     IoGlobeOutline,
-    IoSearchOutline,
+    IoSearchOutline
 } from 'react-icons/io5';
 
 const Header = () => {
-     const { user, logout } = useAuth();
+    const { user, logout } = useAuth();
     const navigate = useNavigate();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isIndividualsOpen, setIsIndividualsOpen] = useState(false);
@@ -60,7 +60,7 @@ const Header = () => {
     const languageRef = useRef(null);
 
     const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
-     const [isSearchVisible, setIsSearchVisible] = useState(false);
+    const [isSearchVisible, setIsSearchVisible] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [activeSearchTab, setActiveSearchTab] = useState('Top');
     const [assets, setAssets] = useState([]);
@@ -97,7 +97,7 @@ const Header = () => {
                 { title: 'Coinbase One', desc: 'Get zero trading fees and more', icon: <IoShieldCheckmarkOutline className="text-xl" /> },
                 { title: 'Private Client', desc: 'For clients, family offices, UHNWIs', icon: <IoPersonOutline className="text-xl" /> },
                 { title: 'Onchain', desc: 'Dive into the world of onchain apps', icon: <IoGlobeOutline className="text-xl" /> },
-                { title: 'Learn', desc: 'Crypto tips and guides', icon: <IoBookOutline className="text-xl" />,href: "/learn", },
+                { title: 'Learn', desc: 'Crypto tips and guides', icon: <IoBookOutline className="text-xl" /> },
             ]
         },
         {
@@ -182,13 +182,12 @@ const Header = () => {
         },
         {
             items: [
-                { title: 'Support', desc: 'Find answers to your questions',href: "https://help.coinbase.com", icon: <IoHelpCircleOutline className="text-xl" /> },
+                { title: 'Support', desc: 'Find answers to your questions', icon: <IoHelpCircleOutline className="text-xl" /> },
                 { title: 'Blog', desc: 'Read the latest from Coinbase', icon: <IoNewspaperOutline className="text-xl" /> },
                 { title: 'Security', desc: 'The most trusted & secure', icon: <IoShieldCheckmarkOutline className="text-xl" /> },
             ]
         }
     ];
-
 
     // Close menu when clicking outside
     useEffect(() => {
@@ -359,6 +358,7 @@ const Header = () => {
         setIsCompanyPinned(newState);
         setIsCompanyOpen(newState);
     };
+
     return (
         <header className="w-full h-20 bg-white border-b border-gray-100 sticky top-0 z-[5000]">
             {/* Background Scrim for Search Mode */}
@@ -371,9 +371,9 @@ const Header = () => {
             <div className="max-w-7xl mx-auto h-full flex items-center justify-between pl-0 pr-4 md:pr-8">
 
                 {/* 1. Logo and Nav */}
-                <div className="flex items-center gap-8 h-full">
+                <div className="flex items-center gap-3 h-full">
                     <Link to="/" className="flex items-center">
-                        <img src={logo} alt="Coinbase" className="h-6 md:h-8" />
+                        <img src={logo} alt="Coinbase" className="h-8 md:h-10" />
                     </Link>
 
                     <nav className="hidden lg:flex items-center gap-2 text-black h-full">
@@ -388,7 +388,7 @@ const Header = () => {
                         >
                             <button
                                 onClick={handleClick}
-                                className="font-bold text-[16px] text-black h-full flex items-center px-4 cursor-pointer outline-none border-none bg-transparent"
+                                className="font-bold text-[16px] text-black hover:text-black h-full flex items-center px-3 cursor-pointer outline-none border-none bg-transparent"
                             >
                                 Individuals
                             </button>
@@ -427,10 +427,10 @@ const Header = () => {
                                                         className="w-full h-full object-cover rounded-[16px]"
                                                     />
                                                 </div>
-                                                <div className="flex flex-col gap-1.5 pt-1 h-32 justify-between">
+                                                <div className="flex flex-col gap-1.5 pt-1 h-36 justify-between">
                                                     <div className="flex flex-col gap-1">
                                                         <h3 className="font-bold text-[20px] text-black transition-colors leading-tight">System Update</h3>
-                                                        <p className="text-[15px] text-gray-500 font-medium leading-tight max-w-[200px]">
+                                                        <p className="text-[15.5px] text-gray-500 font-medium leading-tight max-w-[200px]">
                                                             The next chapter of Coinbase. <br />Live on X 12/17.
                                                         </p>
                                                     </div>
@@ -454,7 +454,7 @@ const Header = () => {
                         >
                             <button
                                 onClick={handleBusinessClick}
-                                className="font-bold text-[16px] text-black h-full flex items-center px-4 cursor-pointer outline-none border-none bg-transparent"
+                                className="font-bold text-[16px] text-black hover:text-black h-full flex items-center px-3 cursor-pointer outline-none border-none bg-transparent"
                             >
                                 Businesses
                             </button>
@@ -474,8 +474,8 @@ const Header = () => {
                                                                 {item.icon}
                                                             </div>
                                                             <div className="flex flex-col">
-                                                                <span className="font-bold text-[17px] text-black transition-colors">{item.title}</span>
-                                                                <span className="text-[15px] text-gray-500 font-medium leading-[1.3]">{item.desc}</span>
+                                                                <span className="font-bold text-[17.5px] text-black transition-colors">{item.title}</span>
+                                                                <span className="text-[15.5px] text-gray-500 font-medium leading-[1.3]">{item.desc}</span>
                                                             </div>
                                                         </a>
                                                     ))}
@@ -493,10 +493,10 @@ const Header = () => {
                                                         className="w-full h-full object-cover rounded-[16px]"
                                                     />
                                                 </div>
-                                                <div className="flex flex-col gap-1.5 pt-1 h-32 justify-between">
+                                                <div className="flex flex-col gap-1.5 pt-1 h-36 justify-between">
                                                     <div className="flex flex-col gap-1">
                                                         <h3 className="font-bold text-[20px] text-black transition-colors leading-tight">Commerce Payments Protocol</h3>
-                                                        <p className="text-[15px] text-gray-500 font-medium leading-tight max-w-[200px]">
+                                                        <p className="text-[15.5px] text-gray-500 font-medium leading-tight max-w-[200px]">
                                                             A new standard for onchain payments.
                                                         </p>
                                                     </div>
@@ -510,150 +510,78 @@ const Header = () => {
                                 </div>
                             )}
                         </div>
-                        
-                        
-                        <div className="h-full flex items-center relative"
+                        {/* Institutions Mega-Menu Trigger */}
+                        <div
+                            className="h-full flex items-center relative"
                             onMouseEnter={handleInstitutionsMouseEnter}
                             onMouseLeave={handleInstitutionsMouseLeave}
                             ref={institutionsRef}
                         >
-                    <button
-                        onClick={handleInstitutionsClick}
-                        className="font-bold text-[16px] text-black h-full flex items-center px-4 cursor-pointer outline-none border-none bg-transparent"
->
-  Institutions
-</button>
+                            <button
+                                onClick={handleInstitutionsClick}
+                                className="font-bold text-[16px] text-black hover:text-black h-full flex items-center px-3 cursor-pointer outline-none border-none bg-transparent"
+                            >
+                                Institutions
+                            </button>
 
-                    {isInstitutionsOpen && (
-                    <div className="fixed top-20 left-0 w-full bg-white border-b border-gray-100 shadow-[0_30px_60px_rgba(0,0,0,0.12)] py-12 px-8 flex justify-center z-[6000]">
-      <div className="max-w-7xl w-full grid grid-cols-12 gap-10">
+                            {/* The Institutions Mega Menu - Full Width */}
+                            {isInstitutionsOpen && (
+                                <div className="fixed top-20 left-0 w-full bg-white border-b border-gray-100 shadow-[0_30px_60px_rgba(0,0,0,0.12)] py-12 px-8 flex justify-center z-[6000]">
+                                    <div className="max-w-7xl w-full grid grid-cols-12 gap-10">
 
-        {/* LEFT SIDE */}
-        <div className="col-span-8 grid grid-cols-2 gap-x-12 gap-y-8">
+                                        {/* Left Side: 2 Columns of Links - Scrollable (Hidden Scrollbar) */}
+                                        <div className="col-span-8 grid grid-cols-2 gap-x-12 gap-y-6 max-h-[50vh] overflow-y-auto pr-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                                            {institutionCategories.map((col, idx) => (
+                                                <div key={idx} className="flex flex-col gap-4">
+                                                    <a href="#" className="flex items-center gap-2 px-3 py-1 rounded-lg hover:bg-gray-100 transition-colors group/header w-fit">
+                                                        <h4 className="text-black font-bold text-[15px] tracking-wide uppercase">{col.title}</h4>
+                                                        {col.title === 'Prime' && (
+                                                            <FaChevronRight className="text-[10px] text-gray-400 group-hover/header:text-black transition-colors mt-0.5" />
+                                                        )}
+                                                    </a>
+                                                    {col.items.map((item, i) => (
+                                                        <a key={i} href="#" className="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-all duration-200 group">
+                                                            <div className="mt-1 text-gray-400 group-hover:text-black transition-colors">
+                                                                {item.icon}
+                                                            </div>
+                                                            <div className="flex flex-col">
+                                                                <span className="font-bold text-[17.5px] text-black transition-colors">{item.title}</span>
+                                                                <span className="text-[15.5px] text-gray-500 font-medium leading-[1.3]">{item.desc}</span>
+                                                            </div>
+                                                        </a>
+                                                    ))}
+                                                </div>
+                                            ))}
+                                        </div>
 
-          {/* PRIME COLUMN */}
-          <div className="flex flex-col gap-6">
-            <p className="text-sm font-semibold text-gray-400 uppercase">Prime</p>
-
-            <div className="flex items-start gap-4 group cursor-pointer">
-              <IoShieldCheckmarkOutline className="text-2xl text-gray-400 group-hover:text-black" />
-              <div>
-                <h4 className="font-bold text-lg">Trading and Financing</h4>
-                <p className="text-gray-500 text-sm">
-                  Professional prime brokerage services
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 group cursor-pointer">
-              <IoWalletOutline className="text-2xl text-gray-400 group-hover:text-black" />
-              <div>
-                <h4 className="font-bold text-lg">Custody</h4>
-                <p className="text-gray-500 text-sm">
-                  Securely store all your digital assets
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 group cursor-pointer">
-              <IoStatsChartOutline className="text-2xl text-gray-400 group-hover:text-black" />
-              <div>
-                <h4 className="font-bold text-lg">Staking</h4>
-                <p className="text-gray-500 text-sm">
-                  Explore staking across our products
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 group cursor-pointer">
-              <IoGridOutline className="text-2xl text-gray-400 group-hover:text-black" />
-              <div>
-                <h4 className="font-bold text-lg">Onchain Wallet</h4>
-                <p className="text-gray-500 text-sm">
-                  Institutional-grade wallet to get onchain
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* MARKETS COLUMN */}
-          <div className="flex flex-col gap-6">
-            <p className="text-sm font-semibold text-gray-400 uppercase">Markets</p>
-
-            <div className="flex items-start gap-4 group cursor-pointer">
-              <IoGridOutline className="text-2xl text-gray-400 group-hover:text-black" />
-              <div>
-                <h4 className="font-bold text-lg">Exchange</h4>
-                <p className="text-gray-500 text-sm">
-                  Spot markets for high-frequency trading
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 group cursor-pointer">
-              <IoGlobeOutline className="text-2xl text-gray-400 group-hover:text-black" />
-              <div>
-                <h4 className="font-bold text-lg">International Exchange</h4>
-                <p className="text-gray-500 text-sm">
-                  Access perpetual futures markets
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 group cursor-pointer">
-              <IoBarChartOutline className="text-2xl text-gray-400 group-hover:text-black" />
-              <div>
-                <h4 className="font-bold text-lg">Derivatives Exchange</h4>
-                <p className="text-gray-500 text-sm">
-                  Trade an accessible futures market
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 group cursor-pointer">
-              <IoShieldCheckmarkOutline className="text-2xl text-gray-400 group-hover:text-black" />
-              <div>
-                <h4 className="font-bold text-lg">Verified Pools</h4>
-                <p className="text-gray-500 text-sm">
-                  Transparent, verified liquidity pools
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* RIGHT SIDE FEATURE */}
-        <div className="col-span-4 border-l border-gray-100 pl-10 flex items-start">
-          <div className="flex flex-col gap-6">
-
-            {/* IMAGE ADDED HERE */}
-            <img
-              src={InstImage}
-              alt="Institutions"
-              className="w-32 h-32 object-contain"
-            />
-
-            <div>
-              <h3 className="text-xl font-bold">Our clients</h3>
-              <p className="text-gray-500 mt-1">
-                Trusted by institutions and government.
-              </p>
-
-              <div className="flex items-center gap-2 text-[#0052ff] font-semibold mt-3 cursor-pointer hover:underline">
-                Learn more
-                <FaChevronRight className="text-sm" />
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  )}
-</div>
-
-                       {/* Developers Mega-Menu Trigger */}
+                                        {/* Right Side: Featured Promo Area - Compact Side-by-Side */}
+                                        <div className="col-span-4 border-l border-gray-100 pl-10 flex items-start">
+                                            <a href="#" className="flex items-start gap-8 group cursor-pointer hover:bg-gray-50 p-5 rounded-[24px] transition-all duration-300 w-full">
+                                                <div className="w-36 h-36 flex-shrink-0">
+                                                    <img
+                                                        src={institutionImg}
+                                                        alt="Featured"
+                                                        className="w-full h-full object-cover rounded-[16px]"
+                                                    />
+                                                </div>
+                                                <div className="flex flex-col gap-1.5 pt-1 h-36 justify-between">
+                                                    <div className="flex flex-col gap-1">
+                                                        <h3 className="font-bold text-[20px] text-black transition-colors leading-tight">Our clients</h3>
+                                                        <p className="text-[15.5px] text-gray-500 font-medium leading-tight max-w-[200px]">
+                                                            Trusted by institutions and government.
+                                                        </p>
+                                                    </div>
+                                                    <div className="flex items-center gap-2 text-[#0052ff] font-bold text-[14px] mt-auto">
+                                                        Learn more <FaChevronRight className="text-[11px]" />
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                        {/* Developers Mega-Menu Trigger */}
                         <div
                             className="h-full flex items-center relative"
                             onMouseEnter={handleDevelopersMouseEnter}

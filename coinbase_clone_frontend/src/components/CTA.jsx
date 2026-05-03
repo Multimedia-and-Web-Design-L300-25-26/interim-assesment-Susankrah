@@ -9,7 +9,7 @@ const CTA = () => {
         <section className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center overflow-hidden">
 
             {/* 1. Content Side (Left) - Shifted left and larger text */}
-            <div className="flex flex-col gap-6 md:gap-8 max-w-xl text-left lg:-ml-10">
+            <div className="flex flex-col gap-6 md:gap-8 max-w-xl text-left">
                 <div className="flex flex-col gap-4 md:gap-6">
                     <h2 className="text-5xl md:text-5xl lg:text-7xl font-extrabold text-black leading-[1.1] md:leading-tight">
                         Take control of <br className="md:hidden" />
@@ -28,17 +28,15 @@ const CTA = () => {
                         placeholder="satoshi@nakamoto.com"
                         className="flex-grow w-full"
                     />
-                    <Link to="/Signup2">
                     <Button as={Link} to="/signup" variant="primary" className="hover:bg-[#004BD6] whitespace-nowrap w-full sm:w-fit">
                         Sign up
                     </Button>
-                    </Link>
                 </div>
             </div>
 
             {/* 2. Visual Side (Right) - Even larger and shifted up/left */}
             <div className="w-full flex items-center justify-center lg:justify-end">
-                <div className="relative w-full max-w-3xl lg:-mt-16 lg:-ml-20 scale-110 lg:scale-125 origin-center lg:origin-right">
+                <div className="relative w-full max-w-3xl lg:-mt-16 lg:ml-16 scale-110 lg:scale-125 origin-center lg:origin-right">
                     <img
                         src={moniesGraphic}
                         alt="Cryptocurrency Universe"

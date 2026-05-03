@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import usdcImage from '../assets/usdc.avif';
 import bankImage from '../assets/bank.png';
 import investImage from '../assets/invest.png';
@@ -49,9 +49,9 @@ const CryptoBasics = () => {
                             Beginner guides, practical tips, and market updates for first-timers, experienced investors, and everyone in between.
                         </p>
                         <div className="flex justify-start">
-                            <button className="bg-black text-white px-8 py-3 rounded-full font-bold text-base hover:bg-gray-800 transition-all duration-200 active:scale-95">
+                            <Link to="/learn" className="bg-black text-white px-8 py-3 rounded-full font-bold text-base hover:bg-gray-800 transition-all duration-200 active:scale-95 inline-block">
                                 Read More
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

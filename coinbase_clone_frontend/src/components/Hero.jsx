@@ -26,9 +26,9 @@ const Hero = () => {
             <div className="flex flex-col gap-8 max-w-xl mx-0 text-left order-1 lg:order-2">
                 <div className="flex flex-col gap-4">
                     <h1 className="text-5xl md:text-5xl lg:text-7xl font-extrabold text-black leading-[1.1] md:leading-tight">
-                        The future of finance is here.
-                         
-                        
+                        The future <br className="md:hidden" />
+                        of finance <br className="md:hidden" />
+                        is here.
                     </h1>
                     <p className="text-lg md:text-xl text-gray-600">
                         Trade crypto and more on a platform you can trust.
@@ -41,11 +41,9 @@ const Hero = () => {
                         placeholder="satoshi@nakamoto.com"
                         className="flex-1 w-full"
                     />
-                    <Link to="/Signup2">
-                <Button variant="primary" className="w-full sm:w-fit">
-                    Sign up
-                </Button>
-                    </Link>
+                    <Button as={Link} to="/signup" variant="primary" className="w-full sm:w-fit">
+                        Sign up
+                    </Button>
                 </div>
             </div>
 

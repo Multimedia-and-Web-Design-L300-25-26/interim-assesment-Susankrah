@@ -11,10 +11,13 @@ import LegalDisclosure from './components/LegalDisclosure';
 import Footer from './components/Footer';
 import Explore from './pages/Explore';
 import AssetDetail from './pages/AssetDetail';
+import Profile from './pages/Profile';
+import AddCrypto from './pages/AddCrypto';
+import ProjectBanner from './components/ProjectBanner';
+import FooterDisclaimer from './components/FooterDisclaimer';
 import Learn from './pages/Learn';
-import Signup from './pages/Signup';
-import Signin from './pages/Signin';
-import Signup2 from './pages/Signup2';
+import Signup from './components/Signup';
+import Signin from './components/Signin';
 
 const HomePage = () => (
   <>
@@ -36,18 +39,21 @@ const AppContent = () => {
 
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans">
+      <ProjectBanner />
       {!isAuthPage && <Header />}
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/explore" element={<Explore />} />
+          <Route path="/learn" element={<Learn />} />
+          <Route path="/price/:asset" element={<AssetDetail />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
-          <Route path="/signup2" element={<Signup2 />} />
-          <Route path="/explore"  element={<Explore />} />
-        <Route path="/price/:asset" element={<AssetDetail />} />
-        <Route path="/learn"        element={<Learn />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/add-crypto" element={<AddCrypto />} />
         </Routes>
       </main>
+      <FooterDisclaimer />
       {!isAuthPage && <Footer />}
     </div>
   );
